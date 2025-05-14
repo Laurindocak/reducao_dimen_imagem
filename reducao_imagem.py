@@ -18,26 +18,27 @@ imagem_rgb = cv2.cvtColor(imagem_colorida, cv2.COLOR_BGR2RGB)
 # Converte para tons de cinza
 imagem_cinza = cv2.cvtColor(imagem_colorida, cv2.COLOR_BGR2GRAY)
 
-# Binarização (threshold)
-_, imagem_binarizada = cv2.threshold(imagem_cinza, 127, 255, cv2.THRESH_BINARY)
+# Binaria(threshold)
+_, imagem_binaria = cv2.threshold(imagem_cinza, 127, 255, cv2.THRESH_BINARY)
 
 # Exibição
-plt.figure(figsize=(12, 4))
+plt.figure(figsize=(8, 3))
 
 plt.subplot(1, 3, 1)
-plt.title("Colorida")
+plt.title("Imagem Original")
 plt.imshow(imagem_rgb)
 plt.axis("off")
 
 plt.subplot(1, 3, 2)
-plt.title("Cinza")
+plt.title("Imagem Cinza")
 plt.imshow(imagem_cinza, cmap='gray')
 plt.axis("off")
 
 plt.subplot(1, 3, 3)
-plt.title("Binarizada")
-plt.imshow(imagem_binarizada, cmap='gray')
+plt.title("Imagem Binaria")
+plt.imshow(imagem_binaria, cmap='gray')
 plt.axis("off")
 
 plt.tight_layout()
 plt.show()
+
